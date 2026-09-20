@@ -132,9 +132,7 @@ def gradient_descent(y, a, sigma_w, sigma_x, num_iters, alpha=None):
     alpha defaults to Eq. (11). Returns (x_hat, cost_history), an (H, W)
     tensor and a list of num_iters+1 costs beginning with c(y).
     """
-    x_hat, cost_history, _ = gradient_descent_diagnostics(
-        y, a, sigma_w, sigma_x, num_iters, alpha
-    )
+    x_hat, cost_history, _ = gradient_descent_diagnostics(y, a, sigma_w, sigma_x, num_iters, alpha)
     return x_hat, cost_history
 
 
