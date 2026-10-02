@@ -1,0 +1,50 @@
+{
+  "independent_blur_max_abs_error": 7.771561172376096e-16,
+  "runs": {
+    "R1": {
+      "independent_final_cost": 200096.9810074134,
+      "cost_abs_error": 0.0,
+      "independent_rmse": 0.03497540927415406,
+      "all_50_cost_changes_negative": true
+    },
+    "R2": {
+      "independent_final_cost": 204148.29374262397,
+      "cost_abs_error": 2.9103830456733704e-11,
+      "independent_rmse": 0.02990709424471275,
+      "all_50_cost_changes_negative": true
+    },
+    "R3": {
+      "independent_final_cost": 248489.09642505678,
+      "cost_abs_error": 2.9103830456733704e-11,
+      "independent_rmse": 0.03399854871456705,
+      "all_50_cost_changes_negative": true
+    },
+    "R4": {
+      "independent_final_cost": 159746.71734433333,
+      "cost_abs_error": 0.0,
+      "independent_rmse": 0.03801039448365573,
+      "all_50_cost_changes_negative": true
+    },
+    "R5": {
+      "independent_final_cost": 253843.51271817612,
+      "cost_abs_error": 0.0,
+      "independent_rmse": 0.03862094838106604,
+      "all_50_cost_changes_negative": true
+    },
+    "R6": {
+      "independent_final_cost": 150423.36304020335,
+      "cost_abs_error": 0.0,
+      "independent_rmse": 0.040642557740805545,
+      "all_50_cost_changes_negative": true
+    }
+  },
+  "autograd_vs_equation16_max_abs_error": 2.2737367544323206e-12,
+  "lab3_array_keys": [
+    "y",
+    "x_hat_0.01",
+    "x_hat_0.05",
+    "x_hat_0.25"
+  ],
+  "measurement_vs_lab3_max_abs_error": 0.0,
+  "all_passed": true
+}

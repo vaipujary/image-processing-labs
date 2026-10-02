@@ -1,0 +1,5 @@
+__pycache__/
+.mplconfig/
+results/*.pt
+output/
+references/

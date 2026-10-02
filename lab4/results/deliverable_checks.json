@@ -1,0 +1,12 @@
+{
+  "report_pages": 7,
+  "native_word_equations": 4,
+  "figures": 8,
+  "D1_to_D11_present": true,
+  "document_unprotected": true,
+  "all_pages_visually_reviewed": true,
+  "render_engine": "Codex bundled LibreOffice 25.2",
+  "functions_only_and_required_signatures_pass": true,
+  "six_numerical_test_groups_pass": true,
+  "independent_results_verification_pass": true
+}
