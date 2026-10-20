@@ -1,0 +1,11 @@
+{
+  "cpu_mps_max_error": 1.430511474609375e-06,
+  "cpu_mps_rms_error": 1.9865320507943666e-07,
+  "shape": [
+    512,
+    768
+  ],
+  "float64_outer": true,
+  "float32_network": true,
+  "separate_transfer_and_cast": true
+}

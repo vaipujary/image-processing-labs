@@ -1,0 +1,94 @@
+{
+  "runs": {
+    "F_small": {
+      "rmse_recomputed": 0.04678632113824385,
+      "finite": true,
+      "history_length": 0
+    },
+    "F_large": {
+      "rmse_recomputed": 0.19769717798986147,
+      "finite": true,
+      "history_length": 0
+    },
+    "MAP50": {
+      "rmse_recomputed": 0.029907094244712742,
+      "finite": true,
+      "history_length": 0,
+      "weighted_map_gradient_rms": 0.06264344481713802,
+      "map_cost": 204148.293742624
+    },
+    "MAP_converged": {
+      "rmse_recomputed": 0.029639296130533656,
+      "finite": true,
+      "history_length": 0,
+      "weighted_map_gradient_rms": 1.2254667635447068e-13,
+      "map_cost": 204141.55806119577
+    },
+    "Q05": {
+      "rmse_recomputed": 0.029639318556718263,
+      "finite": true,
+      "history_length": 100,
+      "weighted_map_gradient_rms": 6.539999426436222e-06,
+      "map_cost": 204141.55806140584
+    },
+    "Q025": {
+      "rmse_recomputed": 0.03681756367350207,
+      "finite": true,
+      "history_length": 100,
+      "weighted_map_gradient_rms": 1.5070491461179448e-05,
+      "map_cost": 223320.92261049084
+    },
+    "Q10": {
+      "rmse_recomputed": 0.04807676426664232,
+      "finite": true,
+      "history_length": 100,
+      "weighted_map_gradient_rms": 7.220928939382086e-09,
+      "map_cost": 294513.6199278095
+    },
+    "Q05_inner10": {
+      "rmse_recomputed": 0.029639320397703495,
+      "finite": true,
+      "history_length": 100
+    },
+    "D05": {
+      "rmse_recomputed": 0.01939073223683523,
+      "finite": true,
+      "history_length": 50
+    },
+    "D025": {
+      "rmse_recomputed": 0.024630103734003955,
+      "finite": true,
+      "history_length": 50
+    },
+    "D10": {
+      "rmse_recomputed": 0.14844127065418622,
+      "finite": true,
+      "history_length": 50
+    },
+    "PG_unstable": {
+      "rmse_recomputed": 10711.021701186592,
+      "finite": true,
+      "history_length": 50
+    },
+    "PG_stable": {
+      "rmse_recomputed": 0.02282338016373917,
+      "finite": true,
+      "history_length": 50
+    }
+  },
+  "mean_denoiser": {
+    "target_mean": 0.4302206535077871,
+    "output_mean": 0.4302206535077871,
+    "max_difference_from_mean": 1.765760899163915e-07,
+    "rmse": 0.1860681891016178,
+    "final_residual": 1.2630452165336064e-07
+  },
+  "weights_sha256": "4e6aacd09e41ae50551efc61da3c7e07844ca8d3795e4cf3bc031d797fc81d08",
+  "stability_ceiling": 0.02828427124746191,
+  "below_1e_3_through_end": {
+    "D05": 7,
+    "PG_stable": 29,
+    "Q05": 6,
+    "Q05_inner10": 6
+  }
+}

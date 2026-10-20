@@ -1,0 +1,11 @@
+{
+  "report_pages": 9,
+  "inline_figures": 13,
+  "editable_tables": 5,
+  "deliverables_in_order": true,
+  "all_pages_visually_inspected": true,
+  "sha256": {
+    "lab5/output/docx/Lab_5_Report.docx": "53fed14f812ad1454bbf24cf47eb26fea8eef86a941c219b24d31dff506cefbd",
+    "lab5/output/pdf/Lab_5_Report.pdf": "bb3d678081e6c1d9ec3ee0d76a1f81464f83dd2c7c49b07e9dd9acaf714df3db"
+  }
+}

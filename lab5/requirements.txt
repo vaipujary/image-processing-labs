@@ -1,0 +1,4 @@
+torch==2.14.1
+deepinv==0.4.2
+matplotlib==3.11.2
+python-docx

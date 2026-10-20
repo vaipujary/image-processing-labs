@@ -1,0 +1,20 @@
+{
+  "fft_forward_max_error": 2.498001805406602e-16,
+  "fft_adjoint_max_error": 2.3592239273284576e-16,
+  "prox_normal_equation_max_error": 5.684341886080801e-13,
+  "prior_gradient_vs_lab4_max_error": 2.842170943040401e-14,
+  "surrogate_step_vs_lab4_error": 0.0,
+  "denoising_cost_decrease": 950.8623147094258,
+  "quadratic_map_rms_error": 6.609790764966459e-16,
+  "prox_vs_dense_max_error": 1.1102230246251565e-15,
+  "functions_only": true,
+  "signatures": {
+    "kernel_dft": "(a, shape)",
+    "prox_data": "(v, y, a_hat, sigma_w, sigma_p)",
+    "denoise_qggmrf": "(v, sigma_n, sigma_x, p, q, T, num_iters)",
+    "pnp_admm": "(y, a_hat, denoiser, sigma_w, sigma_p, num_iters)",
+    "pnp_qggmrf_map": "(y, a_hat, sigma_w, sigma_p, sigma_n, sigma_x, p, q, T, num_iters, inner_iters)",
+    "denoise_dnn": "(v, sigma_n)",
+    "pnp_prox_grad": "(y, a_hat, denoiser, sigma_w, sigma_p, num_iters)"
+  }
+}
