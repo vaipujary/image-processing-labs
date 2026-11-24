@@ -1,0 +1,5 @@
+# Keep report document generation and document-only checks local in every lab.
+/lab*/make_word_report.py
+/lab*/make_report.py
+/lab*/audit_report.py
+/lab*/results/report_audit.json
