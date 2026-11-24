@@ -1,0 +1,51 @@
+{
+  "e_step": {
+    "signature": "e_step(Y, weights, means, covariances)",
+    "purpose": "Compute the posterior component probabilities in equation (6). Evaluate the Gaussian log density in equation (1), add log weights, and normalize with a rowwise log-sum-exp; never divide ordinary Gaussian densities.",
+    "arguments": "Y is a finite float array (N, p), with N and p positive. weights is (M,), strictly positive and summing to one. means is (M, p). covariances is (M, p, p), symmetric positive definite. Parameters are finite; M is positive.",
+    "returns": "P is a new float array (N, M), with P[n, m] equal to the posterior probability of component m for observation n.",
+    "invariants": "P is finite, lies in [0, 1], and each row sums to one within floating-point precision, including for a distant test point. Inputs are not modified. Gaussian evaluation uses Cholesky solves and log determinants. Invalid shapes, weights, or covariances raise ValueError."
+  },
+  "m_step": {
+    "signature": "m_step(Y, P)",
+    "purpose": "Compute the expected counts and first moments in equation (7), then the parameters in equation (8). Compute covariance using the equivalent weighted centered outer products to avoid subtracting large second moments. Add exactly 1e-6 times the p by p identity to each updated covariance.",
+    "arguments": "Y is finite with shape (N, p). P is finite, nonnegative, and has shape (N, M); every row sums to one within numerical precision and every component has positive total responsibility.",
+    "returns": "A tuple (weights, means, covariances) of new float arrays with shapes (M,), (M, p), and (M, p, p). Divide the covariance sum by the expected component count, not by count minus one.",
+    "invariants": "Weights are positive and sum to one. Means and covariances are finite. Covariances are symmetric and have eigenvalues at least 1e-6 up to rounding. Hard assignments reproduce labeled ML estimates, with the same 1e-6 identity addition in the covariance comparison. Inputs are not modified; invalid probabilities or an empty component raise ValueError."
+  },
+  "log_likelihood": {
+    "signature": "log_likelihood(Y, weights, means, covariances)",
+    "purpose": "Evaluate equation (3) using the normalized Gaussian of equation (1), including the p log(2 pi) constant. Sum the rowwise log-sum-exp of the log-weighted component densities over all observations, using natural logarithms.",
+    "arguments": "Y (N, p), weights (M,), means (M, p), and covariances (M, p, p) have the same meanings and validity requirements as e_step.",
+    "returns": "One Python float: the total observed-data log likelihood, not its negative and not its per-observation average.",
+    "invariants": "The result is finite for valid inputs within float64 range, agrees with a single Gaussian when M is one, and is invariant to simultaneous component permutation. Inputs are not modified. Invalid inputs raise ValueError."
+  },
+  "run_em": {
+    "signature": "run_em(Y, weights, means, covariances, num_iterations)",
+    "purpose": "Starting from copies of the supplied parameters, alternate e_step and m_step exactly num_iterations times. Evaluate equation (3) at initialization and after every M-step. Use no early stopping or additional randomization.",
+    "arguments": "Y and the initial parameter arrays satisfy e_step's contract. num_iterations is a nonnegative integer.",
+    "returns": "The final weights (M,), means (M, p), covariances (M, p, p), and history, a list of num_iterations + 1 Python floats. history[0] is the initial log likelihood; history[k] follows EM iteration k.",
+    "invariants": "All parameter outputs satisfy the M-step invariants and inputs are unchanged. Check successive likelihood differences with tolerance 1e-8; report any decrease rather than hiding it. Exact EM is monotone, but the required additive covariance regularization is not an exact unregularized ML update, so universal monotonicity is not promised. Zero iterations returns copied inputs and a one-entry history."
+  },
+  "mdl": {
+    "signature": "mdl(Y, weights, means, covariances)",
+    "purpose": "Compute equations (12) and (13): negative log likelihood plus one half of L(M) times log(Np), where L(M) = M[1 + p + p(p + 1)/2] - 1. Use natural logarithms and the actual N, p, and M from the array shapes.",
+    "arguments": "Y (N, p), weights (M,), means (M, p), and covariances (M, p, p) satisfy the likelihood contract.",
+    "returns": "One Python float giving the MDL score for this fitted parameter tuple.",
+    "invariants": "The score is finite; MDL + log likelihood equals the shape-dependent penalty. The penalty is constant during EM at fixed M. No parameters are changed; invalid inputs raise ValueError."
+  },
+  "merge_closest": {
+    "signature": "merge_closest(Y, weights, means, covariances)",
+    "purpose": "For every unordered pair l < m, form its moment-preserving merged parameters with equations (15) and (16) and evaluate distance (14) using log determinants. Merge the pair with smallest distance. Break exact ties by lexicographic pair order; replace l and delete m, preserving the remaining order.",
+    "arguments": "Y (N, p) determines N and p. weights (M,), means (M, p), covariances (M, p, p) satisfy the likelihood contract, with M at least two.",
+    "returns": "New weights (M - 1,), means (M - 1, p), and covariances (M - 1, p, p). Other components are copied unchanged. Do not add another covariance ridge during merging.",
+    "invariants": "The weights sum to one and covariances remain symmetric positive definite. Mixture total mean and second raw moment are preserved to numerical precision. Inputs are unchanged. M less than two or invalid parameters raise ValueError."
+  },
+  "estimate_order": {
+    "signature": "estimate_order(Y, max_order, initial_means, num_iterations)",
+    "purpose": "Initialize uniform weights, identity covariances, and the supplied means. For M descending from max_order through one, run exactly num_iterations EM steps, save that order's final parameters and MDL, and merge once before the next order. Evaluate MDL immediately after every merge as well as after every EM iteration.",
+    "arguments": "Y is finite (N, p). max_order is a positive integer; initial_means is finite (max_order, p). num_iterations is a positive integer. The lab uses max_order = 9, initial_means = Y[:9], and num_iterations = 20.",
+    "returns": "A dictionary with models[M] containing copied final weights, means, covariances, mdl, and the EM history; trace containing records with iteration, order, event, and mdl; merges containing the cumulative locations, selected pairs, and distances; and best_order minimizing final MDL, with smaller M breaking an exact tie.",
+    "invariants": "There is one model for each M from one through max_order and exactly max_order - 1 merges. EM events advance the cumulative iteration; merge events retain the preceding iteration number, producing two values at a merge location. With nine orders and 20 iterations, trace has 180 EM records plus eight merge records and ends at iteration 180. Later updates cannot mutate stored models."
+  }
+}
