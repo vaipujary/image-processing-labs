@@ -1,0 +1,22 @@
+{
+  "rmse": 0.029639320397703495,
+  "rms_difference_from_saved": 0.0,
+  "history_max_error": 0.0,
+  "final_residual": 2.84482916113101e-09,
+  "F_small_normal_equation_max_error": 1.694644424787839e-12,
+  "F_large_normal_equation_max_error": 6.48175957351782e-13,
+  "kernel_matches_original_file": true,
+  "input_hash_matches": {
+    "lab3/kodim23.pgm": true,
+    "lab3/levin09_kernels/levin09_kernel1.txt": true
+  },
+  "report_review": {
+    "pages_rendered_and_inspected": 10,
+    "figures_matched_to_source_pngs": 13,
+    "editable_tables": 5,
+    "rmse_tables_match": true,
+    "source_sha256": "d56d3d13f68dcce6ed0f5dbbcaf15cb8de2bf65cbb155ef5a36654c2d5a6d747",
+    "source_report_modified_by_audit": false
+  },
+  "audit_complete": true
+}

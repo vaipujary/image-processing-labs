@@ -1,0 +1,63 @@
+{
+  "part": "dnn",
+  "runs": {
+    "D05": {
+      "rmse": 0.01939073223683523,
+      "saved_rmse": 0.01939073223683523,
+      "replay_rms_difference": 1.7888753886408672e-16,
+      "relative_replay_difference": 3.8181720678283607e-16,
+      "history_max_error": 3.95516952522712e-16,
+      "final_residual": 7.668973396851462e-05,
+      "final_relative_iterate_change": 0.00027850930951273833,
+      "image_rms": 0.46851617917217536,
+      "seconds": 49.897366290999344
+    },
+    "D025": {
+      "rmse": 0.024630103734003952,
+      "saved_rmse": 0.024630103734003955,
+      "replay_rms_difference": 1.880267246935271e-16,
+      "relative_replay_difference": 4.019541390719257e-16,
+      "history_max_error": 1.3877787807814457e-16,
+      "final_residual": 0.0001166566802403137,
+      "final_relative_iterate_change": 0.0006867448990296147,
+      "image_rms": 0.46778153629083924,
+      "seconds": 46.44000070799666
+    },
+    "D10": {
+      "rmse": 0.14844127065418622,
+      "saved_rmse": 0.14844127065418622,
+      "replay_rms_difference": 1.8083710212963116e-16,
+      "relative_replay_difference": 3.6799519795175287e-16,
+      "history_max_error": 2.2898349882893854e-16,
+      "final_residual": 9.113817054347997e-05,
+      "final_relative_iterate_change": 0.0011393975879324283,
+      "image_rms": 0.49141158128193935,
+      "seconds": 46.81230591698841
+    },
+    "PG_stable": {
+      "rmse": 0.02282338016373917,
+      "saved_rmse": 0.02282338016373917,
+      "replay_rms_difference": 0.0,
+      "relative_replay_difference": 0.0,
+      "history_max_error": 1.8426232761825645e-14,
+      "final_residual": 0.0006223266331202071,
+      "final_relative_iterate_change": 0.0006223266331202071,
+      "image_rms": 0.46797339944958377,
+      "seconds": 46.07252891700773
+    },
+    "PG_unstable": {
+      "rmse": 10711.021701186592,
+      "saved_rmse": 10711.021701186592,
+      "replay_rms_difference": 0.0,
+      "relative_replay_difference": 0.0,
+      "history_max_error": 3.730349362740526e-14,
+      "final_residual": 1.429864647004087,
+      "final_relative_iterate_change": 1.429864647004087,
+      "image_rms": 10711.119263149263,
+      "seconds": 45.817748999994365
+    }
+  },
+  "torch": "2.14.1",
+  "report_sha256": "d56d3d13f68dcce6ed0f5dbbcaf15cb8de2bf65cbb155ef5a36654c2d5a6d747",
+  "device": "mps"
+}

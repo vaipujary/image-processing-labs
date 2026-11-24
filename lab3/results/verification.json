@@ -1,0 +1,51 @@
+{
+  "required_checks": "passed",
+  "input_hashes": "match",
+  "memory": "match",
+  "prediction_error_std": 0.02059667845612921,
+  "runs": [
+    {
+      "experiment": "denoising",
+      "sigma_x": 0.01,
+      "max_pixel_error": 1.1102230246251565e-15,
+      "rmse": 0.03983552174460484,
+      "threshold_iteration": 13
+    },
+    {
+      "experiment": "denoising",
+      "sigma_x": 0.05,
+      "max_pixel_error": 4.440892098500626e-16,
+      "rmse": 0.02971294377640326,
+      "threshold_iteration": 4
+    },
+    {
+      "experiment": "denoising",
+      "sigma_x": 0.25,
+      "max_pixel_error": 6.661338147750939e-16,
+      "rmse": 0.04801992998249421,
+      "threshold_iteration": 2
+    },
+    {
+      "experiment": "deconvolution",
+      "sigma_x": 0.01,
+      "max_pixel_error": 6.661338147750939e-16,
+      "rmse": 0.04246242839018148,
+      "threshold_iteration": 6
+    },
+    {
+      "experiment": "deconvolution",
+      "sigma_x": 0.05,
+      "max_pixel_error": 6.661338147750939e-16,
+      "rmse": 0.03599791632897646,
+      "threshold_iteration": 12
+    },
+    {
+      "experiment": "deconvolution",
+      "sigma_x": 0.25,
+      "max_pixel_error": 1.3322676295501878e-15,
+      "rmse": 0.06838509318892178,
+      "threshold_iteration": 33
+    }
+  ],
+  "unstable_cost_history": "matches independent calculation"
+}
