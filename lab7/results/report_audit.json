@@ -1,0 +1,12 @@
+{
+  "docx_package_integrity": true,
+  "D1_through_D9_in_order": true,
+  "figures": 8,
+  "five_discussion_answers": true,
+  "editable_text_and_equation": true,
+  "image_geometry_within_page": true,
+  "rmse_matches_measured_results": true,
+  "no_pdf_created": true,
+  "visual_render_review": false,
+  "review_note": "File-based checks only, as requested; no screenshots or PDF conversion."
+}

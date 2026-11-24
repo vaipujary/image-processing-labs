@@ -1,0 +1,13 @@
+{
+  "signatures_docstrings_functions_only": true,
+  "neighbor_max_error": 1.3877787807814457e-17,
+  "delta_energy_max_error": 5.3013149425851225e-15,
+  "independent_color_energy_error": 0.0,
+  "prior_shift_invariance": true,
+  "seed_reproducibility_and_no_input_mutation": true,
+  "small_posterior_mean_max_error": 0.000981887888005531,
+  "small_posterior_covariance_relative_frobenius_error": 0.032852478918465225,
+  "posterior_moments_and_history": true,
+  "full_map_gradient_max": 2.2204460492503126e-13,
+  "full_results_shapes_rmse_history_lengths": true
+}
